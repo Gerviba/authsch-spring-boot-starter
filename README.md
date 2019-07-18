@@ -26,6 +26,11 @@ and
 
 Be sure to use the **latest** version.
 
+## How to initialize
+
+- Create a bean with type: `AuthschLoginLogicSupplier` 
+- Set the `client key` (80 chars) and the `client identifier` (20 digit) in your application.properties (or application-production.properties). Note that you'll to create a authsch new project. See [https://auth.sch.bme.hu/](https://auth.sch.bme.hu/)
+
 
 ## Default properties
 
