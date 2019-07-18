@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  hu.bme.sch.auth.authsch.starter.AuthschAutoConfiguration,\
+  hu.bme.sch.auth.authsch.login.AuthschLoginAutoConfiguration
