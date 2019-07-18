@@ -1,4 +1,4 @@
-AuthSCH spring-bot starter
+AuthSCH spring-boot starter
 ===
 
 ## How to import
