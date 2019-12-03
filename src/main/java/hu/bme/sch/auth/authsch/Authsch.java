@@ -145,7 +145,7 @@ public class Authsch implements Serializable {
     }
 
     private AuthResponse httpPost(String parameters, boolean reAuth) {
-        URL obj = newUrl(config.getApiUrlBase());
+        URL obj = newUrl(config.getTokenUrlBase());
         HttpsURLConnection con = newPostConnection(obj);
         setPostHeaders(con);
         writePostParameters(parameters, con);
