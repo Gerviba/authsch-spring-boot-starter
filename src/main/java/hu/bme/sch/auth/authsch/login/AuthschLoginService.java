@@ -53,11 +53,11 @@ public class AuthschLoginService {
 			ProfileDataResponse profile = authSch.getProfile(response.getAccessToken());
 
 			AuthschUser user = methods.getUserExists().test(profile) 
-					? methods.getCreateUser().apply(profile) 
-					: methods.getLoadUser().apply(profile);
+					? methods.getLoadUser().apply(profile) 
+					: methods.getCreateUser().apply(profile);
 					
 			user.updateUser(profile);
-			auth = new UsernamePasswordAuthenticationToken(code, state, getAuthorities(profile, user));
+			auth = new UsernamePasswordAuthenticationToken(user.getInternalId(), state, getAuthorities(profile, user));
 			
 			request.getSession().setAttribute(config.getSessionAttributeName(), user);
 			SecurityContextHolder.getContext().setAuthentication(auth);
