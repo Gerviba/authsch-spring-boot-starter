@@ -57,7 +57,7 @@ public class AuthschLoginService {
 					: methods.getCreateUser().apply(profile);
 					
 			user.updateUser(profile);
-			auth = new UsernamePasswordAuthenticationToken(user.getInternalId(), state, getAuthorities(profile, user));
+			auth = new UsernamePasswordAuthenticationToken(profile.getInternalId(), state, getAuthorities(profile, user));
 			
 			request.getSession().setAttribute(config.getSessionAttributeName(), user);
 			SecurityContextHolder.getContext().setAuthentication(auth);
