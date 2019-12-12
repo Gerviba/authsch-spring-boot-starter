@@ -12,6 +12,8 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import org.springframework.http.HttpHeaders;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -181,6 +183,7 @@ public class Authsch implements Serializable {
     private void setPostHeaders(HttpsURLConnection con) {
         con.setRequestProperty("User-Agent", System.getProperty("authsch.useragent", "AuthSchJavaAPI"));
         con.setRequestProperty("Accept", "application/json");
+        con.setRequestProperty(HttpHeaders.CONTENT_TYPE, "application/x-www-form-urlencoded");
         con.setRequestProperty("Authorization", "Basic " + Base64.getEncoder()
                 .encodeToString((config.getClientIdentifier() + ":" + config.getClientKey()).getBytes()));
 
